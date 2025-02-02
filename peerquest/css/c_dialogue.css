@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container, .dialogue-container, .assessment-container {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.charubelle-gif {
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.dialogue-box {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.btn-start, .btn-submit {
+    background-color: #24243A;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-start:hover, .btn-submit:hover {
+    background-color: #6c63ff;
+}

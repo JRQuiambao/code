@@ -1,0 +1,127 @@
+/* General Styles */
+body {
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2); /* Soft gradient background */
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+/* Question Display */
+.question-display {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #4a4a4a;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.no-question {
+    color: #a0a0a0;
+    font-style: italic;
+}
+
+/* Student Name Display */
+.student-name {
+    font-size: 1.25rem;
+    color: #4a90e2; /* Soft blue */
+    margin-top: 10px;
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Balloon Container */
+.balloon-container {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* Balloon Styles */
+.balloon {
+    position: absolute;
+    width: 100px;
+    height: 120px;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4); /* Pastel gradient */
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    animation: float 6s infinite ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.balloon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes float {
+    0% { transform: translateY(100vh) rotate(0deg); }
+    100% { transform: translateY(-100vh) rotate(360deg); }
+}
+
+.balloon.popped {
+    animation: pop 0.5s forwards;
+}
+
+@keyframes pop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(0); }
+}
+
+/* Button Styles */
+.btn-primary {
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Vibrant gradient */
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Navigation Styles */
+.d-flex.justify-content-between.align-items-center.mb-4 {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Assessment Details */
+.mb-4 {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.mb-4 h2 {
+    color: #4a4a4a;
+    margin-bottom: 10px;
+}
+
+.mb-4 p {
+    color: #6c757d;
+}

@@ -1,0 +1,518 @@
+/* Import Inter font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+
+/* General Page Styling */
+body {
+    font-family: 'Inter', sans-serif; /* Apply Inter font *//* Sidebar styles */}
+    
+    
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 230px;
+    height: 100%;
+    background: #24243A;
+    color: white;
+    transition: width 0.3s ease;
+    border-radius: 0 25px 25px 0;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+/* Collapsed Sidebar */
+.sidebar.collapsed {
+    width: 80px;
+}
+
+/* Logo container */
+.sidebar .logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px;
+}
+
+.logo {
+    width: 50px;  
+    height: auto;
+}
+
+.logo-text {
+    width: 100px;
+    height: auto;
+    margin-left: 5px;
+    transition: opacity 0.3s ease;
+}
+
+/* Hide logo text when collapsed */
+.sidebar.collapsed .logo-text {
+    display: none;
+}
+
+/* Navigation links */
+.sidebar .nav-links {
+    list-style: none;
+    padding: 10px;
+    margin: 20px 0;
+}
+
+/* Ensure alignment and spacing */
+.sidebar .nav-links li {
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* Adjust icon and text for correct spacing */
+.sidebar .nav-links li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    transition: background 0.3s ease, transform 0.2s ease;
+    gap: 15px;
+    border-radius: 40px;
+    width: 100%; /* Ensure the entire sidebar width */
+    box-sizing: border-box; /* Prevent content overflow */
+}
+
+.sidebar.collapsed .nav-links li a {
+    justify-content: center;
+    width: 100%;
+}
+/* Icon size */
+.sidebar .nav-links li a img {
+    width: 30px; 
+    height: 30px;
+    transition: none;
+}
+
+/* Proper alignment of icon and text when expanded */
+.sidebar:not(.collapsed) .nav-links li a {
+    justify-content: flex-start;
+}
+
+/* Center the icons when sidebar is collapsed */
+.sidebar.collapsed .nav-links li {
+    justify-content: center;
+}
+
+/* Ensure text is hidden when collapsed */
+.sidebar.collapsed .nav-links li a span {
+    display: none;
+}
+
+/* Hover effect for navigation links */
+.sidebar .nav-links li a:hover,
+.sidebar .nav-links li.active a {
+    background: rgba(255, 255, 255, 0.15);
+    width: 200px;  /* Ensuring hover covers at least 200px */
+}
+
+/* Toggle Button Positioned Outside Sidebar */
+.toggle-btn {
+    position: fixed;
+    left: 230px;  
+    top: 10px;  
+    border: none;
+    background: none;  
+    cursor: pointer;
+    transition: left 0.3s ease;
+    
+}
+
+.toggle-btn:hover {
+    background: none !important; /* Prevent hover effect */
+    color: inherit !important;
+    box-shadow: none;
+}
+
+/* Ensure toggle moves correctly when sidebar is collapsed */
+.sidebar.collapsed ~ .toggle-btn {
+    left: 80px;
+}
+
+/* Ensure the image inside the button is properly sized */
+.toggle-btn img {
+    width: 40px;  
+    height: auto;
+    transition: all 0.3s ease;
+}
+
+/* Logout Button */
+.logout {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.logout .logout-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 30px;
+    border: 1px solid white;
+    border-radius: 25px;
+    color: white;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+/* Hover effect for logout button */
+.logout .logout-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Collapsed state for logout button */
+.sidebar.collapsed .logout-btn {
+    padding: 10px;
+    width: fit-content;
+    justify-content: center;
+}
+
+/* Hide logout text when sidebar is collapsed */
+.sidebar.collapsed .logout-btn span {
+    display: none;
+}
+
+/* Content styling */
+.content {
+    margin-left: 230px; /* Space for sidebar */
+    margin-top: 0px; /* Adjust based on topbar height */
+    padding: 40px;
+    transition: margin-left 0.3s ease;
+}
+
+/* Top Bar Styles */
+.top-bar {
+    background: #FFFFFF;
+    height: 60px;
+    color: #24243A;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Welcome Section Wrapper */
+.welcome-section {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto; /* Centers the section horizontally */
+    margin-top: 50px; /* Adjust vertical spacing */
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.1);
+    border: 0.5px solid #24243A;
+}
+
+/* Owl image positioned outside the box */
+.welcome-section img {
+    position: absolute;
+    top: -30px;
+    left: -80px;
+    height: 250px;  /* Adjust size */
+}
+
+/* Welcome text styling */
+.welcome-text {
+    font-size: 1.2rem; /* Same as dashboard text */
+    font-weight: bold;
+    color: #24243A;
+    margin-left: 130px;
+    margin-top: 15px;
+}
+
+/* Subtext below welcome */
+.welcome-subtext {
+    font-size: 1.0rem;
+    color: #24243A;
+    margin-top: 10px;
+    margin-left: 130px;
+}
+
+.dashboard-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+    color: #24243A;
+}
+
+.current-date {
+    font-size: 1rem;
+    color: #24243A;
+    margin: 0;
+}
+
+/* Sidebar collapsed effect */
+.sidebar.collapsed ~ .content {
+    margin-left: 80px;
+}
+/* Sidebar collapsed effect */
+.sidebar.collapsed ~ .topbar {
+    margin-left: 80px;
+}
+
+#assessment-name {
+    padding: 10px;
+    font-size: 18px;
+    width: 95%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#assessment-name:focus {
+    outline: none;
+    border-color: #24243A;
+    box-shadow: 0 0 8px rgba(92, 103, 242, 0.5);
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.header-section {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+/* Styling for the settings card */
+.settings-card {
+    padding: 30px;
+    background-color: #d9d9d94a;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+/* Align time limit and total points */
+.settings-row {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.form-group {
+    flex: 1;
+}
+
+/* Total points badge design */
+.total-points-badge {
+    padding: 10px 10px;
+    border: 1px solid #ccc;
+    background-color: #ffff;
+    box-sizing: border-box;
+    color: #000000;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-align: left;
+    width: 95%;
+}
+
+
+h1, h2 {
+    color: #24243A;
+}
+
+.card {
+    background-color: #d9d9d94a;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 100%;
+    margin-bottom: 50px;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+textarea, input[type="text"], input[type="number"] {
+    width: 95%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+textarea:focus, input:focus {
+    outline: none;
+    border-color: #24243A;
+    box-shadow: 0 0 4px rgba(92, 103, 242, 0.3);
+}
+
+.btn-group {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #74C6FB;
+    color: #FFFFFF;
+    transition: background-color 0.3s ease;
+     /* Ensure consistent button width */
+     min-width: 150px;
+     text-align: center;
+}
+
+button:hover {
+    background-color: #357AC6;
+    color: #ffff;
+}
+
+.editable-heading {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between heading and icon */
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #24243A;
+}
+
+/* Edit icon styling */
+.edit-icon {
+    width: 20px;
+    height: 20px;
+    opacity: 0.6;
+}
+
+/* Hover effect to emphasize the icon */
+.edit-icon:hover {
+    opacity: 1;
+    transform: scale(1.1); /* Slight zoom */
+    transition: all 0.3s ease;
+}
+
+
+/* Top-right buttons */
+.top-buttons {
+    display: flex;
+    justify-content: flex-end; /* Align slightly away from the far right */
+    margin-top: 80px;
+    margin-bottom: 10px;
+    gap: 10px;
+    padding-right: 180px; /* Adjust spacing from the left */
+}
+
+.button-form {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-save {
+    background-color: #79D0CA;
+    color: white;
+}
+
+.btn-save:hover {
+    background-color: #47A99C;
+}
+
+.btn-publish {
+    background-color: #74C6FB;
+    color: white;
+}
+
+.btn-publish:hover {
+    background-color: #357AC6;
+}
+
+.btn-update {
+    background-color: #79D0CA;
+    color: white;
+}
+
+.btn-update:hover {
+    background-color: #47A99C;
+}
+
+.btn-unpublish {
+    background-color: #f44336;
+    color: white;
+}
+
+.btn-unpublish:hover {
+    background-color: #ac2323;
+}
+
+.btn-remove {
+    background-color: #871f17;
+    color: white;
+    font-size: 12px;
+}
+
+.btn-remove:hover {
+    background-color: #d32f2f;
+}
+
+ol {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+    list-style: decimal;
+}
+
+.question-item {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+input, textarea {
+    flex: 1;
+}
+
+@media (max-width: 768px) {
+        .welcome-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+    
+        .welcome-section img {
+            position: static;
+            margin-bottom: 15px;
+            width: 150px; /* Adjust as needed */
+            height: auto;
+        }
+    
+        .welcome-text, .welcome-subtext {
+            margin-left: 0;
+        }
+    
+        .top-buttons {
+            justify-content: center;
+            padding: 0; /* Remove extra padding on mobile */
+            flex-wrap: wrap;
+        }
+}
+

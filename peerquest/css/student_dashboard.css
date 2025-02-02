@@ -1,0 +1,570 @@
+/* Import Inter font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+
+/* General Page Styling */
+body {
+    font-family: 'Inter', sans-serif; /* Apply Inter font *//* Sidebar styles */}
+    
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 230px;
+    height: 100%;
+    background: #24243A;
+    color: white;
+    transition: width 0.3s ease;
+    border-radius: 0 25px 25px 0;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+/* Collapsed Sidebar */
+.sidebar.collapsed {
+    width: 80px;
+}
+
+/* Logo container */
+.sidebar .logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px;
+}
+
+.logo {
+    width: 50px;  
+    height: auto;
+}
+
+.logo-text {
+    width: 100px;
+    height: auto;
+    margin-left: 5px;
+    transition: opacity 0.3s ease;
+}
+
+/* Hide logo text when collapsed */
+.sidebar.collapsed .logo-text {
+    display: none;
+}
+
+/* Navigation links */
+.sidebar .nav-links {
+    list-style: none;
+    padding: 10px;
+    margin: 20px 0;
+}
+
+/* Ensure alignment and spacing */
+.sidebar .nav-links li {
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* Adjust icon and text for correct spacing */
+.sidebar .nav-links li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    transition: background 0.3s ease, transform 0.2s ease;
+    gap: 15px;
+    border-radius: 40px;
+    width: 100%; /* Ensure the entire sidebar width */
+    box-sizing: border-box; /* Prevent content overflow */
+}
+
+.sidebar.collapsed .nav-links li a {
+    justify-content: center;
+    width: 100%;
+}
+/* Icon size */
+.sidebar .nav-links li a img {
+    width: 30px; 
+    height: 30px;
+    transition: none;
+}
+
+/* Proper alignment of icon and text when expanded */
+.sidebar:not(.collapsed) .nav-links li a {
+    justify-content: flex-start;
+}
+
+/* Center the icons when sidebar is collapsed */
+.sidebar.collapsed .nav-links li {
+    justify-content: center;
+}
+
+/* Ensure text is hidden when collapsed */
+.sidebar.collapsed .nav-links li a span {
+    display: none;
+}
+
+/* Hover effect for navigation links */
+.sidebar .nav-links li a:hover,
+.sidebar .nav-links li.active a {
+    background: rgba(255, 255, 255, 0.15);
+    width: 200px;  /* Ensuring hover covers at least 200px */
+}
+
+/* Toggle Button Positioned Outside Sidebar */
+.toggle-btn {
+    position: fixed;
+    left: 230px;  
+    top: 10px;  
+    border: none;
+    background: none;  
+    cursor: pointer;
+    transition: left 0.3s ease;
+}
+
+/* Ensure toggle moves correctly when sidebar is collapsed */
+.sidebar.collapsed ~ .toggle-btn {
+    left: 80px;
+}
+
+/* Ensure the image inside the button is properly sized */
+.toggle-btn img {
+    width: 40px;  
+    height: auto;
+    transition: all 0.3s ease;
+}
+
+/* Logout Button */
+.logout {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.logout .logout-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 30px;
+    border: 1px solid white;
+    border-radius: 25px;
+    color: white;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+/* Hover effect for logout button */
+.logout .logout-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Collapsed state for logout button */
+.sidebar.collapsed .logout-btn {
+    padding: 10px;
+    width: fit-content;
+    justify-content: center;
+}
+
+/* Hide logout text when sidebar is collapsed */
+.sidebar.collapsed .logout-btn span {
+    display: none;
+}
+
+/* Content styling */
+.content {
+    margin-left: 230px; /* Space for sidebar */
+    margin-top: 0px; /* Adjust based on topbar height */
+    padding: 40px;
+    transition: margin-left 0.3s ease;
+}
+
+/* Top Bar Styles */
+.top-bar {
+    background: #FFFFFF;
+    height: 60px;
+    color: #24243A;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.dashboard-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+    color: #24243A;
+}
+
+.current-date {
+    font-size: 1rem;
+    color: #24243A;
+    margin: 0;
+}
+
+/* Sidebar collapsed effect */
+.sidebar.collapsed ~ .content {
+    margin-left: 80px;
+}
+/* Sidebar collapsed effect */
+.sidebar.collapsed ~ .topbar {
+    margin-left: 80px;
+}
+/* Welcome Section Wrapper */
+.welcome-section {
+    position: relative;
+    max-width: 650px;
+    margin: 0 auto; /* Centers the section horizontally */
+    margin-top: 50px; /* Adjust vertical spacing */
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.1);
+    border: 0.5px solid #24243A;
+}
+
+/* Owl image positioned outside the box */
+.welcome-section img {
+    position: absolute;
+    top: -30px;
+    left: -80px;
+    height: 190px;  /* Adjust size */
+}
+
+/* Welcome text styling */
+.welcome-text {
+    font-size: 1.2rem; /* Same as dashboard text */
+    font-weight: bold;
+    color: #24243A;
+    margin-left: 90px;
+    margin-top: 15px;
+}
+
+/* Subtext below welcome */
+.welcome-subtext {
+    font-size: 1.0rem;
+    color: #24243A;
+    margin-top: -20px;
+    margin-left: 100px;
+}
+
+/* Join Class Form Styling */
+.join-class-form {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between input and button */
+    max-width: 500px; /* Limit width to align with design */
+}
+
+.join-class-form input {
+    flex-grow: 1; /* Allow input to take available space */
+    padding: 15px;
+    border: 1px solid #24243A;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+}
+
+.join-class-form button {
+    padding: 15px 25px;
+    background-color:#24243A; /* Match the login button color */
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.join-class-form button:hover {
+    background-color: #2E2560;
+}
+
+/* Join Class Form */
+.join-class-form {
+    margin-bottom: 30px;
+}
+
+.join-class-form input {
+    width: 300px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+.join-class-form button {
+    background-color: #24243A;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.join-class-form button:hover {
+    background-color: #6c63ff;
+}
+
+/* Section Title */
+h3 {
+    font-size: 1.8rem;
+    color: #24243A;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+/* Class Container */
+.class-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Class Card */
+.class-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: 500px;
+    transition: all 0.3s ease-in-out;
+}
+
+.class-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Class Header */
+.class-header {
+    background: #24243A;
+    color: #fff;
+    padding: 15px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: flex;
+}
+
+/* Class Details Fix */
+.class-details {
+    flex-grow: 1;
+    padding-left: 30px; /* Add space between image and text */
+    text-align: left;
+}
+
+.class-details p {
+    margin: 5px 0;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Button Container Fix */
+.class-actions {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.class-title {
+    text-transform: uppercase;
+}
+
+.class-icons i {
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+/* Class Body */
+.class-body {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+/* Class Image Styling */
+.class-image {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.class-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.class-info {
+    margin-bottom: 20px;
+}
+
+.class-info p {
+    margin: 5px 0;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.class-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align buttons to the left */
+    gap: 15px;
+}
+
+/* Button Styling */
+.btn {
+    width: 170px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #24243A;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: #6c63ff;
+}
+/* Message when no classes */
+.no-classes {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #ccc;
+}
+
+/* No Assessment Container */
+.no-assessment-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* Charubelle GIF */
+.charubelle-gif {
+    width: 200px; /* Adjust size as needed */
+    height: auto;
+    display: block;
+    margin: 0 auto 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.quest-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.quest-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid #24243A; /* Add a light grey border */
+}
+
+.quest-details {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 800px; /* Ensuring consistent width */
+}
+
+.quest-assessment,
+.quest-class {
+    flex: 1; /* Equal width for both */
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #24243A;
+}
+
+.quest-class {
+    text-align: right; /* Align class name to the right */
+}
+
+.quest-timer {
+    font-size: 1rem;
+    font-weight: bold;
+    background: #e0e0e0;
+    padding: 10px 25px;
+    border-radius: 10px;
+    color: #333;
+    min-width: 160px;
+    text-align: center;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    
+    .quest-card {
+        flex-direction: column;
+    text-align: center;
+}
+
+.quest-details {
+    flex-direction: column;
+    align-items: center;
+}
+
+.quest-class {
+    text-align: center;
+}
+    .class-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .class-card {
+        width: 100%;
+    }
+    .charubelle-gif {
+        width: 150px;
+    }
+
+    .no-assessment-message {
+        font-size: 1.2rem;
+    }
+
+    .class-body {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .class-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        width: 80%;
+    }
+}

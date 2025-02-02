@@ -1,0 +1,392 @@
+/* Import Inter font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+
+/* General Page Styling */
+body {
+    font-family: 'Inter', sans-serif; /* Apply Inter font */
+}
+
+/* Sidebar styles */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 230px;
+    height: 100%;
+    background: #24243A;
+    color: white;
+    transition: width 0.3s ease;
+    border-radius: 0 25px 25px 0;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+/* Collapsed Sidebar */
+.sidebar.collapsed {
+    width: 80px;
+}
+
+/* Logo container */
+.sidebar .logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px;
+}
+
+.logo {
+    width: 50px;  
+    height: auto;
+}
+
+.logo-text {
+    width: 100px;
+    height: auto;
+    margin-left: 5px;
+    transition: opacity 0.3s ease;
+}
+
+/* Hide logo text when collapsed */
+.sidebar.collapsed .logo-text {
+    display: none;
+}
+
+/* Navigation links */
+.sidebar .nav-links {
+    list-style: none;
+    padding: 10px;
+    margin: 20px 0;
+}
+
+/* Ensure alignment and spacing */
+.sidebar .nav-links li {
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* Adjust icon and text for correct spacing */
+.sidebar .nav-links li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    transition: background 0.3s ease, transform 0.2s ease;
+    gap: 15px;
+    border-radius: 40px;
+    width: 100%; /* Ensure the entire sidebar width */
+    box-sizing: border-box; /* Prevent content overflow */
+}
+
+.sidebar.collapsed .nav-links li a {
+    justify-content: center;
+    width: 100%;
+}
+/* Icon size */
+.sidebar .nav-links li a img {
+    width: 30px; 
+    height: 30px;
+    transition: none;
+}
+
+/* Proper alignment of icon and text when expanded */
+.sidebar:not(.collapsed) .nav-links li a {
+    justify-content: flex-start;
+}
+
+/* Center the icons when sidebar is collapsed */
+.sidebar.collapsed .nav-links li {
+    justify-content: center;
+}
+
+/* Ensure text is hidden when collapsed */
+.sidebar.collapsed .nav-links li a span {
+    display: none;
+}
+
+/* Hover effect for navigation links */
+.sidebar .nav-links li a:hover,
+.sidebar .nav-links li.active a {
+    background: rgba(255, 255, 255, 0.15);
+    width: 200px;  /* Ensuring hover covers at least 200px */
+}
+
+/* Toggle Button Positioned Outside Sidebar */
+.toggle-btn {
+    position: fixed;
+    left: 230px;  
+    top: 10px;  
+    border: none;
+    background: none;  
+    cursor: pointer;
+    transition: left 0.3s ease;
+}
+
+/* Ensure toggle moves correctly when sidebar is collapsed */
+.sidebar.collapsed ~ .toggle-btn {
+    left: 80px;
+}
+
+/* Ensure the image inside the button is properly sized */
+.toggle-btn img {
+    width: 40px;  
+    height: auto;
+    transition: all 0.3s ease;
+}
+
+/* Logout Button */
+.logout {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.logout .logout-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 30px;
+    border: 1px solid white;
+    border-radius: 25px;
+    color: white;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+/* Hover effect for logout button */
+.logout .logout-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Collapsed state for logout button */
+.sidebar.collapsed .logout-btn {
+    padding: 10px;
+    width: fit-content;
+    justify-content: center;
+}
+
+/* Hide logout text when sidebar is collapsed */
+.sidebar.collapsed .logout-btn span {
+    display: none;
+}
+
+/* Content styling */
+.content {
+    margin-left: 230px; /* Space for sidebar */
+    margin-top: 0px; /* Adjust based on topbar height */
+    padding: 40px;
+    transition: margin-left 0.3s ease;
+}
+
+/* Top Bar Styles */
+.top-bar {
+    background: #FFFFFF;
+    height: 60px;
+    color: #24243A;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.dashboard-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+    color: #24243A;
+}
+
+.current-date {
+    font-size: 1rem;
+    color: #24243A;
+    margin: 0;
+}
+
+/* Sidebar collapsed effect */
+.sidebar.collapsed ~ .content {
+    margin-left: 80px;
+}
+/* Sidebar collapsed effect */
+.sidebar.collapsed ~ .topbar {
+    margin-left: 80px;
+}
+
+/* Welcome Section Wrapper */
+.welcome-section {
+    position: relative;
+    max-width: 650px;
+    margin: 0 auto; /* Centers the section horizontally */
+    margin-top: 50px; /* Adjust vertical spacing */
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.1);
+    border: 0.5px solid #24243A;
+}
+
+/* Owl image positioned outside the box */
+.welcome-section img {
+    position: absolute;
+    top: -30px;
+    left: -80px;
+    height: 190px;  /* Adjust size */
+}
+
+/* Welcome text styling */
+.welcome-text {
+    font-size: 1.2rem; /* Same as dashboard text */
+    font-weight: bold;
+    color: #24243A;
+    margin-left: 90px;
+    margin-top: 15px;
+}
+
+/* Subtext below welcome */
+.welcome-subtext {
+    font-size: 1.0rem;
+    color: #24243A;
+    margin-top: -20px;
+    margin-left: 100px;
+}
+
+/* General Container */
+.achievement-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    padding: 30px;
+}
+
+/* Glassmorphism Card Design */
+.achievement-card {
+    position: relative;
+    width: 250px;
+    padding: 20px;
+    border-radius: 15px;
+    backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+    text-align: center;
+    color: #fff;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+
+
+/* Emoji */
+.achievement-content .emoji {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Title */
+.achievement-content h3 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+/* Highlighted Numbers */
+.achievement-content p .highlight {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffeb3b;
+    text-shadow: 0 0 10px rgba(255, 235, 59, 0.8);
+}
+
+/* Progress Bar */
+.progress-bar {
+    width: 100%;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.progress {
+    height: 100%;
+    background: linear-gradient(to right, #ffeb3b, #ff5722);
+    transition: width 0.5s ease-in-out;
+}
+
+/* Unique Card Colors */
+.streak { background:#ff9a9e}
+.modules { background:#8fd3f4 }
+.answered { background: #a18cd1 }
+.collabs { background:  #ee9ca7}
+
+
+/* Badge Title */
+.badge-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #24243A;
+    margin-bottom: 20px;
+}
+
+/* Badge Gallery */
+.badge-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Badge Card */
+.badge-card {
+    width: 180px;
+    background: white;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.badge-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Badge Image */
+.badge-img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+/* Badge Info */
+.badge-info h3 {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.badge-info p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* No Badges Message */
+.no-badges {
+    font-size: 1.2rem;
+    color: #888;
+    font-weight: bold;
+    margin-top: 20px;
+}

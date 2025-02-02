@@ -1,0 +1,218 @@
+/* Import Inter font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+body {
+    background: url('../images/login_bg.webp') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.signup-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  /* Center vertically */
+    align-items: center;      /* Center horizontally */
+    height: 100vh;            /* Full viewport height */
+    padding: 20px;            /* Add some padding for spacing */
+    box-sizing: border-box;   /* Include padding in the height calculation */
+}
+
+/* Signup card styling*/
+.signup-card {
+    background: rgba(255, 255, 255, 0.332);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    box-sizing: border-box;
+    backdrop-filter: blur(5px);  /* Frosted glass effect */
+    -webkit-backdrop-filter: blur(7px); 
+
+}
+
+
+/* Signup title */
+.signup-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+/* Style for arranging first and last name fields */
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-row .form-group {
+    flex: 1;
+    min-width: 150px;
+}
+
+/* Form group alignment */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* Labels */
+label {
+    display: block;
+    font-size: 0.9rem;
+    color: #000000;
+    margin-bottom: 5px;
+}
+
+/* Input fields */
+.form-control {
+    max-width: 100%;
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s ease-in-out;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.7);
+    flex: 1;
+}
+
+.form-control:focus {
+    border-color: #000000;
+    box-shadow: 0 0 5px rgba(56, 42, 101, 0.5);
+}
+
+.password-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #696969;
+    transition: color 0.3s ease-in-out;
+}
+
+.toggle-password:hover {
+    color: #24243A;
+}
+
+
+/* Role dropdown styling */
+#role {
+    appearance: none;
+    background: rgba(255, 255, 255, 0.7) url('../images/dropdown_arrow.png') no-repeat right 15px center;
+    background-size: 16px;
+}
+
+/* Error message styles */
+.error-message {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+
+/* Register link */
+.register-link {
+    font-size: 0.9rem;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.input-error {
+    border-color: red !important;
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+}
+
+
+.register-link a {
+    color: #24243A;
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+/* Button styling */
+.btn-primary {
+    max-width: 100%;
+    width: 100%;
+    background-color: #24243A;
+    color: #ffffff;
+    border: none;
+    padding: 12px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    margin: 0 auto;
+}
+
+.btn-primary:hover {
+    background-color: #ffffff;
+    color: #24243A;
+    border: 1px solid #696969;
+}
+
+.success-message {
+    color: green;
+    font-weight: bold;
+    padding: 10px;
+    border: 1px solid green;
+    border-radius: 5px;
+    text-align: center;
+    background: rgba(0, 255, 0, 0.1);
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .signup-card {
+        max-width: 90%;  /* Adjust card width on tablets */
+    }
+    .form-row {
+        flex-direction: column;
+    }
+    .signup-container {
+        padding: 10px; 
+}
+}
+
+@media (max-width: 576px) {
+    body {
+        padding: 15px;
+    }
+
+    .signup-card {
+        padding: 20px;
+    }
+
+    .btn-primary {
+        font-size: 0.9rem;
+    }
+}

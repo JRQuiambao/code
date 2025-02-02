@@ -1,0 +1,256 @@
+/* Import Inter font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+body {
+    background: url('../images/login_bg.webp') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+/* Container to align logo and login card */
+.login-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1000px;
+    width: 100%;
+    gap: 250px;
+    margin-top: -50px; /* Raise the content higher */
+}
+
+/* Logo section */
+.logo-section {
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Ensure the logo and text stay together */
+#pq_logo {
+    width: 350px; /* Default size */
+    max-width: 100%;
+}
+
+#pq_logo_txt {
+    width: 280px; /* Proportional size to logo */
+    max-width: 100%;
+    margin-top: 10px; /* Maintain space between logo and text */
+}
+
+/* Login card styling */
+.login-card {
+    background: rgba(255, 255, 255, 0.332);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    box-sizing: border-box;
+    backdrop-filter: blur(5px);  /* Frosted glass effect */
+    -webkit-backdrop-filter: blur(7px); 
+}
+
+/* Login title */
+.login-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+/* Form fields */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    font-size: 0.9rem;
+    color: #000000;
+    margin-bottom: 5px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s ease-in-out;
+    box-sizing: border-box;
+}
+
+.form-control:focus {
+    border-color: #000000;
+    box-shadow: 0 0 5px rgba(56, 42, 101, 0.5);
+}
+
+/* Password input with toggle icon */
+.password-container {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #696969;
+    transition: color 0.3s ease-in-out;
+}
+
+.toggle-password:hover {
+    color: #357AC6;
+}
+
+.error-message {
+    color: red;
+    font-weight: 100;
+    background: rgba(255, 0, 0, 0.1);
+    border: 1px solid red;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 10px;
+}
+.hidden {
+    display: none;
+}
+.shake {
+    animation: shake 0.5s;
+}
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25%, 75% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+}
+
+
+
+/* Options section */
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+/* Forgot Password link */
+.forgot-password {
+    color: #24243A;
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+/* Button styling */
+.btn-primary {
+    width: 100%;
+    background-color: #24243A;
+    color: #ffffff;
+    border: none;
+    padding: 12px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition:  0.3s ease-in-out;
+    box-sizing: border-box;
+}
+
+.btn-primary:hover {
+    background-color: #ffffff;
+    color: #24243A;
+    border: 1px solid #696969;
+}
+
+/* Register link */
+.register-link {
+    font-size: 0.9rem;
+    color: #ffffff;
+}
+
+.register-link a {
+    color: #24243A;
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .login-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .login-card {
+        width: 100%;
+    }
+
+    #pq_logo {
+        width: 300px;
+    }
+
+    #pq_logo_txt {
+        width: 240px;
+    }
+}
+
+/* Adjust layout for tablets */
+@media (max-width: 768px) {
+    .login-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    #pq_logo {
+        width: 250px; /* Smaller size for tablets */
+    }
+
+    #pq_logo_txt {
+        width: 200px;
+    }
+
+    .login-card {
+        padding: 25px;
+    }
+}
+
+/* Adjust layout for mobile screens */
+@media (max-width: 576px) {
+    body {
+        padding: 15px;
+    }
+
+    .login-card {
+        padding: 20px;
+
+    }
+
+    .logo-section img {
+        width: 80%;
+    }
+
+    .btn-primary {
+        font-size: 0.9rem;
+    }
+}

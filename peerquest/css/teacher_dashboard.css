@@ -1,0 +1,631 @@
+/* Import Inter font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+
+/* General Page Styling */
+body {
+    font-family: 'Inter', sans-serif; /* Apply Inter font *//* Sidebar styles */}
+    
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 230px;
+    height: 100%;
+    background: #24243A;
+    color: white;
+    transition: width 0.3s ease;
+    border-radius: 0 25px 25px 0;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+/* Collapsed Sidebar */
+.sidebar.collapsed {
+    width: 80px;
+}
+
+/* Logo container */
+.sidebar .logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px;
+}
+
+.logo {
+    width: 50px;  
+    height: auto;
+}
+
+.logo-text {
+    width: 100px;
+    height: auto;
+    margin-left: 5px;
+    transition: opacity 0.3s ease;
+}
+
+/* Hide logo text when collapsed */
+.sidebar.collapsed .logo-text {
+    display: none;
+}
+
+/* Navigation links */
+.sidebar .nav-links {
+    list-style: none;
+    padding: 10px;
+    margin: 20px 0;
+}
+
+/* Ensure alignment and spacing */
+.sidebar .nav-links li {
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* Adjust icon and text for correct spacing */
+.sidebar .nav-links li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    transition: background 0.3s ease, transform 0.2s ease;
+    gap: 15px;
+    border-radius: 40px;
+    width: 100%; /* Ensure the entire sidebar width */
+    box-sizing: border-box; /* Prevent content overflow */
+}
+
+.sidebar.collapsed .nav-links li a {
+    justify-content: center;
+    width: 100%;
+}
+/* Icon size */
+.sidebar .nav-links li a img {
+    width: 30px; 
+    height: 30px;
+    transition: none;
+}
+
+/* Proper alignment of icon and text when expanded */
+.sidebar:not(.collapsed) .nav-links li a {
+    justify-content: flex-start;
+}
+
+/* Center the icons when sidebar is collapsed */
+.sidebar.collapsed .nav-links li {
+    justify-content: center;
+}
+
+/* Ensure text is hidden when collapsed */
+.sidebar.collapsed .nav-links li a span {
+    display: none;
+}
+
+/* Hover effect for navigation links */
+.sidebar .nav-links li a:hover,
+.sidebar .nav-links li.active a {
+    background: rgba(255, 255, 255, 0.15);
+    width: 200px;  /* Ensuring hover covers at least 200px */
+}
+
+/* Toggle Button Positioned Outside Sidebar */
+.toggle-btn {
+    position: fixed;
+    left: 230px;  
+    top: 10px;  
+    border: none;
+    background: none;  
+    cursor: pointer;
+    transition: left 0.3s ease;
+}
+
+/* Ensure toggle moves correctly when sidebar is collapsed */
+.sidebar.collapsed ~ .toggle-btn {
+    left: 80px;
+}
+
+/* Ensure the image inside the button is properly sized */
+.toggle-btn img {
+    width: 40px;  
+    height: auto;
+    transition: all 0.3s ease;
+}
+
+/* Logout Button */
+.logout {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.logout .logout-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 30px;
+    border: 1px solid white;
+    border-radius: 20px;
+    color: white;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+/* Hover effect for logout button */
+.logout .logout-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Collapsed state for logout button */
+.sidebar.collapsed .logout-btn {
+    padding: 10px;
+    width: fit-content;
+    justify-content: center;
+}
+
+/* Hide logout text when sidebar is collapsed */
+.sidebar.collapsed .logout-btn span {
+    display: none;
+}
+
+/* Content styling */
+.content {
+    margin-left: 230px; /* Space for sidebar */
+    margin-top: 0px; /* Adjust based on topbar height */
+    padding: 40px;
+    transition: margin-left 0.3s ease;
+}
+
+/* Top Bar Styles */
+.top-bar {
+    background: #FFFFFF;
+    height: 60px;
+    color: #000000;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.dashboard-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+    color: #000000;
+}
+
+.current-date {
+    font-weight: bold;
+    font-size: 1rem;
+    color: #357AC6;
+    margin: 0;
+}
+
+/* Sidebar collapsed effect */
+.sidebar.collapsed ~ .content {
+    margin-left: 80px;
+}
+/* Sidebar collapsed effect */
+.sidebar.collapsed ~ .topbar {
+    margin-left: 80px;
+}
+
+/* Form Styling */
+.class-form-container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.class-form-container h3 {
+    font-size: 1.3rem;
+    color: #24243A;
+    margin-bottom: 15px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+}
+
+.btn-primary {
+    background-color: #24243A;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #1E1F3B;
+}
+
+/* Position the header and button */
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: white;
+    margin-bottom: 20px;
+}
+
+/* Style for Create Class Button */
+.create-class-btn {
+    background: white;
+    border: 2px solid #24243A;
+    color: #24243A;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.create-class-btn span {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.create-class-btn:hover {
+    background: #24243A;
+    color: white;
+}
+
+/* Popup Form Styling */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.84);
+    padding: 30px;
+    border-radius: 20px;  /* More rounded edges */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 420px;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Animation for opening */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -55%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* Background Overlay */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);  /* Soft blur effect */
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 999;
+}
+
+/* Popup Content */
+.popup-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+/* Title */
+.popup h3 {
+    color: #24243A;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+/* Close Button */
+.close-popup {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 22px;
+    cursor: pointer;
+    color: #999;
+    transition: color 0.3s ease-in-out;
+}
+
+.close-popup:hover {
+    color: #24243A; /* Darker color on hover */
+}
+
+/* Input Group */
+.input-group {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #24243A;
+    font-weight: 600;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.3s ease-in-out;
+    border-radius: 12px !important;
+}
+
+/* Input Focus Effect */
+.input-group input:focus {
+    border-color: #24243A;
+    box-shadow: 0 0 8px rgba(36, 36, 58, 0.3);
+    outline: none;
+}
+
+/* Button Styling */
+.popup-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    margin-top: 15px;
+}
+
+/* Cancel Button */
+.btn-cancel {
+    flex: 1;
+    background: #e0e0e0;
+    color: #333;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.btn-cancel:hover {
+    background: #d6d6d6;
+}
+
+/* Create Button */
+.btn-submit {
+    flex: 1;
+    background: #24243A;
+    color: white;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.btn-submit:hover {
+    background: #1E1F3B;
+    transform: scale(1.05);
+}
+.btn-cancel:hover {
+    background: #ffffff;
+    transform: scale(1.05);
+}
+
+/* Section Title */
+h3 {
+    font-size: 1.8rem;
+    color: #24243A;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+/* Class Container */
+.class-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 70px;
+    justify-content: center;
+}
+
+/* Class Card */
+.class-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: 500px;
+    transition: all 0.3s ease-in-out;
+}
+
+.class-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Class Header */
+.class-header {
+    background: #24243A;
+    color: #fff;
+    padding: 15px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: flex;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Class Details Fix */
+.class-details {
+    flex-grow: 1;
+    padding-left: 30px; /* Add space between image and text */
+    text-align: left;
+}
+
+.class-details p {
+    margin: 5px 0;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.class-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.icon-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.icon-btn {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.icon-btn:hover {
+    color: rgb(0, 0, 0);
+}
+
+
+/* Button Container Fix */
+.class-actions {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.class-title {
+    text-transform: uppercase;
+}
+
+.class-icons i {
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+/* Class Body */
+.class-body {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+/* Class Image Styling */
+.class-image {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.class-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.class-info {
+    margin-bottom: 3px;
+}
+
+.class-info p {
+    margin: 5px 0;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #000000;
+}
+
+.class-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align buttons to the left */
+    gap: 5px;
+}
+
+
+/* Buttons */
+.btn-action{
+    width: 150px;
+    text-align: center;
+    padding: 12px;
+    border-radius: 10px;
+    background-color: #71828d;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 0.8rem;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+}
+
+
+/* Hover Effects */
+.btn-action:hover {
+    background-color: #357AC6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content {
+        margin-left: 0;
+        padding: 20px;
+    }
+
+    .top-bar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .class-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .class-card {
+        width: 100%;
+    }
+}

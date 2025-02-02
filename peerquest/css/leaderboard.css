@@ -1,0 +1,123 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background:#24243A;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.leaderboard-container {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 30px;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #ff9800;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+h3 {
+    color: #666;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+
+.leaderboard-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 20px 0;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.leaderboard-table th, .leaderboard-table td {
+    padding: 18px;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.leaderboard-table th {
+    background-color: #ffd54f;
+    color: white;
+    border-radius: 10px 10px 0 0;
+}
+
+.leaderboard-table td {
+    background-color: #fff8e1;
+    color: #333;
+    border-bottom: 1px solid #e0e0e0;
+    transition: background-color 0.3s ease;
+}
+
+.leaderboard-table tr:hover td {
+    background-color: #ffeb99;
+}
+
+.rank-1 .name-cell {
+    color: #ff6f00;
+    font-weight: bold;
+}
+
+.rank-2 .name-cell {
+    color: #607d8b;
+    font-weight: bold;
+}
+
+.rank-3 .name-cell {
+    color: #6d4c41;
+    font-weight: bold;
+}
+
+.rank-1 {
+    background-color: #ffecb3;
+    border: 2px solid #ff9800;
+}
+
+.rank-2 {
+    background-color: #cfd8dc;
+    border: 2px solid #607d8b;
+}
+
+.rank-3 {
+    background-color: #d7ccc8;
+    border: 2px solid #6d4c41;
+}
+
+.crown-icon {
+    width: 28px;
+    height: 28px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.buttons {
+    margin-top: 25px;
+}
+
+button, .btn {
+    background-color: #ff9800;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    margin-right: 10px;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover, .btn:hover {
+    background-color: #f57c00;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+}

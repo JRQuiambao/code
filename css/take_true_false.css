@@ -1,0 +1,32 @@
+/* Default for large screens (desktops and laptops) */
+body {
+    font-size: 18px;
+}
+
+/* Large desktops and laptops (screens above 1200px) */
+@media only screen and (min-width: 1200px) {
+    body {
+        font-size: 20px;
+    }
+}
+
+/* Tablets and smaller laptops (between 768px and 1199px) */
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+    body {
+        font-size: 16px;
+    }
+}
+
+/* Smartphones (landscape mode) (between 480px and 767px) */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    body {
+        font-size: 14px;
+    }
+}
+
+/* Smartphones (portrait mode) (below 480px) */
+@media only screen and (max-width: 479px) {
+    body {
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,348 @@
+/* Import Inter font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+
+/* General Page Styling */
+body {
+    font-family: 'Inter', sans-serif; /* Apply Inter font *//* Sidebar styles */}
+    
+    
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 230px;
+    height: 100%;
+    background: #24243A;
+    color: white;
+    transition: width 0.3s ease;
+    border-radius: 0 25px 25px 0;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+/* Collapsed Sidebar */
+.sidebar.collapsed {
+    width: 80px;
+}
+
+/* Logo container */
+.sidebar .logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px;
+}
+
+.logo {
+    width: 50px;  
+    height: auto;
+}
+
+.logo-text {
+    width: 100px;
+    height: auto;
+    margin-left: 5px;
+    transition: opacity 0.3s ease;
+}
+
+/* Hide logo text when collapsed */
+.sidebar.collapsed .logo-text {
+    display: none;
+}
+
+/* Navigation links */
+.sidebar .nav-links {
+    list-style: none;
+    padding: 10px;
+    margin: 20px 0;
+}
+
+/* Ensure alignment and spacing */
+.sidebar .nav-links li {
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* Adjust icon and text for correct spacing */
+.sidebar .nav-links li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    transition: background 0.3s ease, transform 0.2s ease;
+    gap: 15px;
+    border-radius: 40px;
+    width: 100%; /* Ensure the entire sidebar width */
+    box-sizing: border-box; /* Prevent content overflow */
+}
+
+.sidebar.collapsed .nav-links li a {
+    justify-content: center;
+    width: 100%;
+}
+/* Icon size */
+.sidebar .nav-links li a img {
+    width: 30px; 
+    height: 30px;
+    transition: none;
+}
+
+/* Proper alignment of icon and text when expanded */
+.sidebar:not(.collapsed) .nav-links li a {
+    justify-content: flex-start;
+}
+
+/* Center the icons when sidebar is collapsed */
+.sidebar.collapsed .nav-links li {
+    justify-content: center;
+}
+
+/* Ensure text is hidden when collapsed */
+.sidebar.collapsed .nav-links li a span {
+    display: none;
+}
+
+/* Hover effect for navigation links */
+.sidebar .nav-links li a:hover,
+.sidebar .nav-links li.active a {
+    background: rgba(255, 255, 255, 0.15);
+    width: 200px;  /* Ensuring hover covers at least 200px */
+}
+
+/* Toggle Button Positioned Outside Sidebar */
+.toggle-btn {
+    position: fixed;
+    left: 230px;  
+    top: 10px;  
+    border: none;
+    background: none;  
+    cursor: pointer;
+    transition: left 0.3s ease;
+    
+}
+
+.toggle-btn:hover {
+    background: none !important; /* Prevent hover effect */
+    color: inherit !important;
+    box-shadow: none;
+}
+
+/* Ensure toggle moves correctly when sidebar is collapsed */
+.sidebar.collapsed ~ .toggle-btn {
+    left: 80px;
+}
+
+/* Ensure the image inside the button is properly sized */
+.toggle-btn img {
+    width: 40px;  
+    height: auto;
+    transition: all 0.3s ease;
+}
+
+/* Logout Button */
+.logout {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.logout .logout-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 30px;
+    border: 1px solid white;
+    border-radius: 25px;
+    color: white;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+/* Hover effect for logout button */
+.logout .logout-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Collapsed state for logout button */
+.sidebar.collapsed .logout-btn {
+    padding: 10px;
+    width: fit-content;
+    justify-content: center;
+}
+
+/* Hide logout text when sidebar is collapsed */
+.sidebar.collapsed .logout-btn span {
+    display: none;
+}
+
+/* Content styling */
+.content {
+    margin-left: 230px; /* Space for sidebar */
+    margin-top: 0px; /* Adjust based on topbar height */
+    padding: 40px;
+    transition: margin-left 0.3s ease;
+}
+
+/* Top Bar Styles */
+.top-bar {
+    background: #FFFFFF;
+    height: 60px;
+    color: #24243A;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.dashboard-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+    color: #24243A;
+}
+
+.current-date {
+    font-size: 1rem;
+    color: #24243A;
+    margin: 0;
+}
+
+/* Sidebar collapsed effect */
+.sidebar.collapsed ~ .content {
+    margin-left: 80px;
+}
+/* Sidebar collapsed effect */
+.sidebar.collapsed ~ .topbar {
+    margin-left: 80px;
+}
+
+h2, h3 {
+    font-weight: 600;
+    color: #24243A;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #0056b3;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #ffffff;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+}
+
+th {
+    background-color: #4a90e2;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+tr:hover {
+    background-color: #e8f0fe;
+}
+
+/* Button Design */
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    background-color: #47A99C;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #32796f;
+}
+
+/* Circular Progress */
+.circular-progress {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    background-color: #e8f0fe;
+    border-radius: 50%;
+    font-size: 18px;
+    font-weight: bold;
+    color: #4a90e2;
+    margin-left: auto;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Section */
+.d-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    outline: 1px solid #e0e0e0; /* Light gray outline */
+    margin-bottom: 20px;
+}
+
+
+.mb-3 {
+    margin-bottom: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .d-flex {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .circular-progress {
+        margin-left: 0;
+        margin-top: 15px;
+    }
+
+    table th, table td {
+        padding: 1px;
+    }
+
+    .btn {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+}

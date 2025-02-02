@@ -1,0 +1,212 @@
+/* Import Inter font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+
+/* General Page Styling */
+body {
+    font-family: 'Inter', sans-serif; /* Apply Inter font */
+    background-color: #24243A;
+    margin: 0;
+    padding: 0;
+}
+
+/* Assessment Container */
+.assessment-container {
+    max-width: 1350px;
+    margin: 50px auto;
+    padding: 50px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.assessment-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #24243A;
+    margin-bottom: 20px;
+}
+/* Timer Box Styling */
+.timer-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Timer Text Styling */
+.timer-text {
+    font-size: 1.0rem;
+    font-weight: bold;
+    color: #24243A;
+    padding: 10px 20px;
+    display: inline-block;
+    letter-spacing: 1.2px;
+    font-family: 'Arial', sans-serif;
+    margin-top: 10px;
+}
+
+/* Add a label before the timer */
+#timer::before {
+    content: "Time Remaining: ";
+    font-size: 1.2rem;
+    font-weight: normal;
+    color: #333;
+}
+.timer-container {
+    text-align: center;
+    font-size: 1.8rem !important; /* Increased size */
+    font-weight: bold !important;
+    color: #24243A !important;
+    background-color: #ffcc00 !important; /* Highlight background */
+    padding: 15px 25px !important; /* More spacing */
+    border-radius: 8px !important; /* Rounded corners */
+    display: inline-block !important; /* Fit to content */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2) !important;
+    letter-spacing: 1.2px !important;
+}
+
+/* Styling the timer text */
+.timer-container span {
+    font-size: 2rem !important;
+    font-weight: bold !important;
+    color: #333 !important;
+}
+
+progress {
+    width: 100%;
+    height: 15px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* For Webkit browsers (Chrome, Safari) */
+progress::-webkit-progress-value {
+    background: linear-gradient(to left,  #58CDFF,#79A1FB,#9D65FC,#392B65, #24243A); /* Gradient effect */
+    border-radius: 5px;
+}
+
+/* For Firefox */
+progress::-moz-progress-bar {
+    background: linear-gradient(to left, #58CDFF,#79A1FB,#9D65FC,#392B65, #24243A);
+    border-radius: 5px;
+}
+
+/* Question Styling */
+.question-card {
+    background: #ffffff;
+    padding: 20px;
+    border-left: 5px solid #24243A;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.question-number {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: 24243A;
+    margin-bottom: 10px;
+}
+
+.points {
+    color: #ED7071;
+    font-weight: bold;
+}
+
+.question-text {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* Input Field Styling */
+.input-field {
+    width: 100%;
+    padding: 15px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+/* Submit Button */
+.submit-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.submit-btn {
+    background-color: #24243A;
+    color: #fff;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #fff;
+    color: #382a65;
+    border: 1px solid #382a65;
+}
+
+/* Success Message Container */
+.success-container {
+    max-width: 600px;
+    margin: 100px auto;
+    padding: 40px;
+    background: #f0fff4; /* Light green background for success */
+    border-left: 5px solid #28a745; /* Green success border */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Success Message Text */
+.success-message {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #28a745; /* Success green */
+    margin-bottom: 20px;
+}
+
+/* Back Link Styling */
+.back-link {
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #007bff; /* Blue link color */
+    transition: color 0.3s ease-in-out;
+}
+
+.back-link:hover {
+    color: #0056b3; /* Darker blue on hover */
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .assessment-container {
+        padding: 20px;
+    }
+
+    .submit-btn {
+        width: 100%;
+    }
+
+    .question-card {
+        padding: 15px;
+    }
+    .timer-container {
+        font-size: 1.2rem; /* Slightly smaller for responsiveness */
+        padding: 8px 16px;
+    }
+}

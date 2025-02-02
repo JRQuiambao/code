@@ -1,0 +1,294 @@
+/* Import Inter font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+
+/* General Page Styling */
+body {
+    font-family: 'Inter', sans-serif; /* Apply Inter font */
+    background-color: #24243A;
+    margin: 0;
+    padding: 0;
+}
+
+/* Assessment Container */
+.assessment-container {
+    max-width: 1350px;
+    margin: 50px auto;
+    padding: 50px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.assessment-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #24243A;
+    margin-bottom: 20px;
+}
+/* Timer Box Styling */
+.timer-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Timer Text Styling */
+.timer-text {
+    font-size: 1.0rem;
+    font-weight: bold;
+    color: #24243A;
+    padding: 10px 20px;
+    display: inline-block;
+    letter-spacing: 1.2px;
+    font-family: 'Arial', sans-serif;
+    margin-top: 10px;
+}
+
+/* Add a label before the timer */
+#timer::before {
+    content: "Time Remaining: ";
+    font-size: 1.2rem;
+    font-weight: normal;
+    color: #333;
+}
+.timer-container {
+    text-align: center;
+    font-size: 1.8rem !important; /* Increased size */
+    font-weight: bold !important;
+    color: #24243A !important;
+    background-color: #ffcc00 !important; /* Highlight background */
+    padding: 15px 25px !important; /* More spacing */
+    border-radius: 8px !important; /* Rounded corners */
+    display: inline-block !important; /* Fit to content */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2) !important;
+    letter-spacing: 1.2px !important;
+}
+
+/* Styling the timer text */
+.timer-container span {
+    font-size: 2rem !important;
+    font-weight: bold !important;
+    color: #333 !important;
+}
+
+progress {
+    width: 100%;
+    height: 15px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* For Webkit browsers (Chrome, Safari) */
+progress::-webkit-progress-value {
+    background: linear-gradient(to left,  #58CDFF,#79A1FB,#9D65FC,#392B65, #24243A); /* Gradient effect */
+    border-radius: 5px;
+}
+
+/* For Firefox */
+progress::-moz-progress-bar {
+    background: linear-gradient(to left, #58CDFF,#79A1FB,#9D65FC,#392B65, #24243A);
+    border-radius: 5px;
+}
+
+/* Submit Button */
+.submit-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.submit-btn {
+    background-color: #24243A;
+    color: #fff;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #fff;
+    color: #382a65;
+    border: 1px solid #382a65;
+}
+
+/* Wrapper to center everything */
+.health-bar-wrapper {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Boss Health Text */
+.boss-health-text {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #24243A;
+    margin-bottom: 10px;
+}
+
+/* Health Bar Container */
+.health-bar-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Heart Icon */
+.health-icon {
+    width: 60px;
+    height: auto;
+}
+
+/* Health Bar Styling */
+.health-bar {
+    position: relative;
+    width: 60%;
+    height: 30px;
+    background-color: #ddd;
+    border-radius: 15px;
+    border: 2px solid #000;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.health-progress {
+    height: 100%;
+    width: 100%; /* Full health at start */
+    border-radius: 15px;
+    transition: width 0.5s ease-in-out, background 0.5s ease-in-out;
+}
+
+/* Style for the boss GIF */
+.boss-gif {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.boss-gif img {
+    width: 150px; /* Adjust the size of the GIF */
+    height: auto;
+}
+.boss-gif img {
+    animation: pulse 2s infinite ease-in-out;
+}
+
+
+/* Question Container */
+.question-container {
+    display: none;
+    border: 3px solid;
+    border-image: linear-gradient(to left,  #58CDFF,#79A1FB,#9D65FC,#392B65, #24243A);
+    border-image-slice: 1;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #f9f9f9;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+.question-container.active {
+    display: block;
+}
+
+.question-number {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: 24243A;
+    margin-bottom: 10px;
+}
+
+.points {
+    color: #ED7071;
+    font-weight: bold;
+}
+
+.question-text {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* Option Buttons */
+.option-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.option-btn {
+    background-color: #ffffff;
+    border: 2px solid #392B65;
+    color: #24243A;
+    padding: 15px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.option-btn:hover {
+    background: #392B65;
+    color: white;
+}
+
+.option-btn.selected {
+    background-color: #007bff;
+    color: white;
+}
+
+input[type="radio"]:checked + .option-btn {
+    background: #24243A;
+    color: white;
+}
+
+/* Submit Button */
+.submit-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.submit-btn {
+    background-color: #24243A;
+    color: #fff;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #fff;
+    color: #382a65;
+    border: 1px solid #382a65;
+}
+/* Choice Circle */
+.choice-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #79A1FB;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-right: 15px;
+}
